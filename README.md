@@ -1,3 +1,3 @@
 # Codeforces Submission Parser
 ## How to use
-` python3 submission-parser.py `
+` python3 submissions.py `
