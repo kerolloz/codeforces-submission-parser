@@ -23,8 +23,8 @@ def parse_it(div_class, file_name):
     os.chdir("./" + file_name)
     test_number = 0
     for div in soup.find_all("div", div_class):
+        test_number += 1
         with open(file_name + str(test_number) + ".txt", 'w') as out_file:
-        	test_number += 1
         	out_file.writelines(div.contents[len(div.contents) - 2].pre.contents)
            
     os.chdir("..")
