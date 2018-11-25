@@ -21,12 +21,12 @@ def parse_it(div_class, file_name):
     global soup
     os.system("mkdir " + file_name)
     os.chdir("./" + file_name)
-    test_number = 1
+    test_number = 0
     for div in soup.find_all("div", div_class):
         with open(file_name + str(test_number) + ".txt", 'w') as out_file:
-            out_file.writelines(div.contents[len(div.contents) - 2].pre.contents)
-            test_number += 1
-
+        	test_number += 1
+        	out_file.writelines(div.contents[len(div.contents) - 2].pre.contents)
+           
     os.chdir("..")
     return test_number
 
