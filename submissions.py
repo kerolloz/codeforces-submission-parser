@@ -45,6 +45,7 @@ def main():
     # create a directory named after the submission number and contest number
     os.system("mkdir " + dir_name)
     os.chdir("./" + str(dir_name))
+    os.system("mkdir test_cases && cd '$_'")
 
     global soup
     soup = BeautifulSoup(my_html, "html.parser")
@@ -55,6 +56,9 @@ def main():
         print(">> DONE!",
               "\n>> Submission has been parsed Successfully to", dir_name, "!"
               )
+        os.system("cd ..")
+        with open("number_of_test_cases.txt", "w") as n_ts:
+            n_ts.writeline(number_of_testcases)
     else:
         print(">> Something went WRONG!")
 
